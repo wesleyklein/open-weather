@@ -1,0 +1,37 @@
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+# Copiar o certificado para o contêiner
+COPY ["openweatherapi/cert/development_certificate.pfx", "/app/cert/"]
+
+# Configurar variáveis de ambiente para o Kestrel usar o certificado HTTPS
+ENV ASPNETCORE_Kestrel__Certificates__Default__Path="/app/cert/development_certificate.pfx"
+ENV ASPNETCORE_Kestrel__Certificates__Default__Password="123456"
+
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["openweatherapi/openweatherapi.csproj", "openweatherapi/"]
+COPY ["openweatherapplication/openweatherapplication.csproj", "openweatherapplication/"]
+COPY ["openweatherdomain/openweatherdomain.csproj", "openweatherdomain/"]
+COPY ["openweatherinfrastructure/openweatherinfrastructure.csproj", "openweatherinfrastructure/"]
+COPY ["openweathercommon/openweathercommon.csproj", "openweathercommon/"]
+RUN dotnet restore "./openweatherapi/openweatherapi.csproj"
+COPY . .
+WORKDIR "/src/openweatherapi"
+RUN dotnet build "./openweatherapi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./openweatherapi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "open-weather-backend.dll"]

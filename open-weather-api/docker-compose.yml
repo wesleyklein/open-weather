@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  openweatherapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Mapeamento de porta para HTTP
+      - "5001:5001"  # Mapeamento de porta para HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:5000;http://+:5001
+    restart: on-failure  

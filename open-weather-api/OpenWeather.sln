@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweatherapi", "openweatherapi\openweatherapi.csproj", "{20D5983B-84D9-48B4-9666-426EFB7CAF50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweatherapplication", "openweatherapplication\openweatherapplication.csproj", "{49E3F8BE-5447-4804-85AD-CAED67F229C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweatherdomain", "openweatherdomain\openweatherdomain.csproj", "{5133F60D-63E9-476D-BF38-A3AC11E68A47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweatherinfrastructure", "openweatherinfrastructure\openweatherinfrastructure.csproj", "{88E736F6-74DD-4AD9-B00C-0496BF32AB5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweathertests", "openweathertests\openweathertests.csproj", "{0627EBC9-32D9-42B4-A383-2FF142DA7B9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openweathercommon", "openweathercommon\openweathercommon.csproj", "{512814B9-2A84-4FEE-A0EA-F743815F18F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{959D0AC1-BAEA-4DF3-8A33-B2B4F80263CA}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		Dockerfile = Dockerfile
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{881873D7-BFA7-4890-ACC2-D3DA95A729BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20D5983B-84D9-48B4-9666-426EFB7CAF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D5983B-84D9-48B4-9666-426EFB7CAF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D5983B-84D9-48B4-9666-426EFB7CAF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D5983B-84D9-48B4-9666-426EFB7CAF50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E3F8BE-5447-4804-85AD-CAED67F229C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E3F8BE-5447-4804-85AD-CAED67F229C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E3F8BE-5447-4804-85AD-CAED67F229C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E3F8BE-5447-4804-85AD-CAED67F229C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5133F60D-63E9-476D-BF38-A3AC11E68A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5133F60D-63E9-476D-BF38-A3AC11E68A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5133F60D-63E9-476D-BF38-A3AC11E68A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5133F60D-63E9-476D-BF38-A3AC11E68A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E736F6-74DD-4AD9-B00C-0496BF32AB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E736F6-74DD-4AD9-B00C-0496BF32AB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E736F6-74DD-4AD9-B00C-0496BF32AB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E736F6-74DD-4AD9-B00C-0496BF32AB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0627EBC9-32D9-42B4-A383-2FF142DA7B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0627EBC9-32D9-42B4-A383-2FF142DA7B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0627EBC9-32D9-42B4-A383-2FF142DA7B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0627EBC9-32D9-42B4-A383-2FF142DA7B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512814B9-2A84-4FEE-A0EA-F743815F18F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512814B9-2A84-4FEE-A0EA-F743815F18F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512814B9-2A84-4FEE-A0EA-F743815F18F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512814B9-2A84-4FEE-A0EA-F743815F18F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881873D7-BFA7-4890-ACC2-D3DA95A729BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881873D7-BFA7-4890-ACC2-D3DA95A729BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881873D7-BFA7-4890-ACC2-D3DA95A729BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881873D7-BFA7-4890-ACC2-D3DA95A729BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {981E68ED-68AA-466F-8E94-361AB80619AA}
+	EndGlobalSection
+EndGlobal
